@@ -93,7 +93,7 @@ public class ArrayListGenerator
                             }
                         }
 
-                        if(arr[i]=='-' && flag==false)
+                        if(arr[i]=='-' && OperatorMetaData.binary.containsKey(arr[i-1])&& flag==false)
                         {
                             list.add("-1");
                             list.add("*");

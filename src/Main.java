@@ -1,6 +1,8 @@
 import Exceptions.EmptyExpression;
 import Parser.ParseController;
 
+import java.util.Scanner;
+
 import static java.lang.System.exit;
 
 public class Main
@@ -9,6 +11,7 @@ public class Main
     {
         try
         {
+            Scanner sc= new Scanner(System.in);
             if (args[0].length() <=1)
             {
                 char ch[]=args[0].toCharArray();
