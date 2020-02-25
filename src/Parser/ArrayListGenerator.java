@@ -4,9 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import Exceptions.WrongTokenException;
 import Operator.OperatorMetaData;
-
 import static java.lang.System.exit;
-
 
 public class ArrayListGenerator
 {
@@ -93,12 +91,7 @@ public class ArrayListGenerator
                             }
                         }
 
-                        if(arr[i]=='-' && OperatorMetaData.binary.containsKey(arr[i-1])&& flag==false)
-                        {
-                            list.add("-1");
-                            list.add("*");
-                            continue;
-                        }
+
                         operator.append(arr[i]);
                         list.add(operator.toString());
                         operator = new StringBuilder();

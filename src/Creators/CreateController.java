@@ -1,6 +1,7 @@
 package Creators;
 
 import Evaluator.Evaluate;
+import Evaluator.EvaluateController;
 import Parser.ParseController;
 
 import java.util.ArrayList;
@@ -29,7 +30,8 @@ public class CreateController
 
         System.out.println();
 
-        Evaluate evaluate1=new Evaluate();
-        System.out.println("RESULT "+evaluate1.evaluate(root));
+        EvaluateController evaluateController = new EvaluateController();
+        evaluateController.calculate(root);
+
     }
 }
