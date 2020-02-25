@@ -1,8 +1,6 @@
-package Creators;
+package creators;
 
-import Evaluator.Evaluate;
-import Evaluator.EvaluateController;
-import Parser.ParseController;
+import evaluator.EvaluateController;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +22,6 @@ public class CreateController
         TreeCreator treeCreator=new TreeCreator();
         Node root=treeCreator.constructTree(this.list);
 
-        System.out.print("TREE TRAVERSAL ");
         Traverse traverse1= new Traverse();
         traverse1.printPostorder(root);
 

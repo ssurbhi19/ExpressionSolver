@@ -1,6 +1,6 @@
-package Parser;
+package parser;
 
-import Creators.CreateController;
+import creators.CreateController;
 import java.util.List;
 
 public class ParseController

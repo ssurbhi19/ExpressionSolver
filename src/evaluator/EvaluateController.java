@@ -1,6 +1,6 @@
-package Evaluator;
+package evaluator;
 
-import Creators.Node;
+import creators.Node;
 
 public class EvaluateController
 {

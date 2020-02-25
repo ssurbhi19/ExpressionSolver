@@ -1,6 +1,6 @@
-package Creators;
+package creators;
 
-import Operator.OperatorMetaData;
+import operator.OperatorMetaData;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -86,7 +86,6 @@ class PostfixCreator
             postFixList.add(stack.pop() + "");
         }
 
-        System.out.println("POSTFIX"+postFixList);
         return postFixList;
     }
 

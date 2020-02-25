@@ -1,4 +1,4 @@
-package Creators;
+package creators;
 
 public class Node
 {

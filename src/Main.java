@@ -1,10 +1,7 @@
-import Evaluator.EvaluateController;
-import Exceptions.EmptyExpression;
-import Parser.ParseController;
+import evaluator.EvaluateController;
+import parser.ParseController;
 
 import java.util.Scanner;
-
-import static java.lang.System.exit;
 
 public class Main {
     public static void main(String args[]) {

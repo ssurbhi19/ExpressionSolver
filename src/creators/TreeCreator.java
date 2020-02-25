@@ -1,7 +1,6 @@
-package Creators;
-import Operator.Operator;
-import Operator.OperatorMetaData;
-import Validator.ValidNumber;
+package creators;
+import operator.OperatorMetaData;
+import validator.ValidNumber;
 
 import java.util.List;
 import java.util.Stack;
@@ -15,7 +14,7 @@ class TreeCreator
         Node temp, right, left;
         for (int i = 0; i < postfix.size(); i++)
         {
-            if (validNumber.isValidNumber(postfix.get(i)))
+            if (!(OperatorMetaData.binary.containsKey(postfix.get(i)) || OperatorMetaData.unary.containsKey(postfix.get(i))))
             {
                     temp = new Node(postfix.get(i));
                     stack.push(temp);

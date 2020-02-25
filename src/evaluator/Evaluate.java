@@ -1,15 +1,14 @@
-package Evaluator;
+package evaluator;
 
-import Creators.Node;
-import Exceptions.WrongTokenException;
-import Operator.Binary;
-import Operator.OperatorMetaData;
+import creators.Node;
+import exceptions.WrongTokenException;
+import operator.OperatorMetaData;
 
 public class Evaluate
 {
-    double ans = -1.0;
+    private double ans = -1.0;
 
-    public boolean isNumeric(String strNum)
+    private boolean isNumeric(String strNum)
     {
         if (strNum == null)
         {
@@ -26,7 +25,7 @@ public class Evaluate
         return true;
     }
 
-    public double BT(Node root)
+    private double BT(Node root)
     {
 
         String type = "";
@@ -56,6 +55,10 @@ public class Evaluate
         else if(type.equals("binary") && root.value.equals("*"))
         {
             ans=OperatorMetaData.binary.get("*").evaluate(BT(root.left), BT(root.right));
+        }
+        else if(type.equals("binary") && root.value.equals("/"))
+        {
+            ans=OperatorMetaData.binary.get("/").evaluate(BT(root.left), BT(root.right));
         }
         else if(type.equals("binary") && root.value.equals("-"))
         {

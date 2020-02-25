@@ -1,4 +1,4 @@
-package Operator;
+package operator;
 
 public interface Operator
 {

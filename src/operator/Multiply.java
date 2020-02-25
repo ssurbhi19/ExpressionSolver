@@ -1,4 +1,4 @@
-package Operator;
+package operator;
 
 public class Multiply implements Binary
 {

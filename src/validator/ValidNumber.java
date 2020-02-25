@@ -1,6 +1,4 @@
-package Validator;
-
-import static java.lang.System.exit;
+package validator;
 
 public class ValidNumber
 {
@@ -9,11 +7,13 @@ public class ValidNumber
         try
         {
             Double.parseDouble(operand);
-            return true;
+
         }
         catch(NumberFormatException e)
         {
-            return false;
+            System.out.println(e.getMessage());
+            System.exit(0);
         }
+        return false;
     }
 }
