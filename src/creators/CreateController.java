@@ -22,9 +22,6 @@ public class CreateController
         TreeCreator treeCreator=new TreeCreator();
         Node root=treeCreator.constructTree(this.list);
 
-        Traverse traverse1= new Traverse();
-        traverse1.printPostorder(root);
-
         System.out.println();
 
         EvaluateController evaluateController = new EvaluateController();

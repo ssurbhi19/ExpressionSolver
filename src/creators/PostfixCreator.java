@@ -8,21 +8,31 @@ import java.util.Stack;
 
 class PostfixCreator
 {
+    private Stack<String> stack = new Stack<>();
+    private List<String> postFixList = new ArrayList<>();
+
     private int getPreference(String c)
     {
-
-        if(c.equals("+") || c.equals("-")) return 1;
-        else if (c.equals("*") || c.equals("/")) return 2;
-        else if (c.equals("sin") || (c.equals("cosec"))) return 3;
-        else return -1;
+        //Return the precedence of operator
+        switch (c) {
+            case "+":
+            case "-":
+                return 1;
+            case "*":
+            case "/":
+                return 2;
+            case "sin":
+            case "cosec":
+                return 3;
+            default:
+                return -1;
+        }
     }
 
     private List<String> getPostFixString(List<String> list)
     {
-        Stack<String> stack = new Stack<>();
-        List<String> postFixList = new ArrayList<>();
-
         boolean flag = false;
+        //Traverse the arrayList.
         for (int i = 0; i < list.size(); i++)
         {
             String word = list.get(i);
@@ -30,11 +40,13 @@ class PostfixCreator
             {
                 continue;
             }
+            //If ( then push it directly into stack.
             if (word.equals("("))
             {
                 stack.push(word);
                 flag = false;
             }
+            //If the word is ) then pop till we encounter (
             else if (word.equals(")"))
             {
                 flag = false;
@@ -51,6 +63,7 @@ class PostfixCreator
                     }
                 }
             }
+            //If its an operator then check the precedence and accordingly act.
             else if (OperatorMetaData.unary.containsKey(word) || OperatorMetaData.binary.containsKey(word))
             {
                 flag = false;
@@ -69,6 +82,7 @@ class PostfixCreator
             }
             else
             {
+                //If its a number then:
                 if (flag)
                 {
                     String lastNumber = postFixList.get(postFixList.size() - 1);

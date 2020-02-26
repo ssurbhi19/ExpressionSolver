@@ -1,6 +1,8 @@
 package parser;
 import java.util.ArrayList;
 import java.util.List;
+
+import exceptions.NoSuchOperatorFound;
 import exceptions.WrongTokenException;
 import operator.Operator;
 import operator.OperatorMetaData;
@@ -148,9 +150,9 @@ public class TokensAsArrayList {
                         tempData = String.valueOf(arr[i]);
                         try {
                             if (!(OperatorMetaData.unary.containsKey(tempData) || OperatorMetaData.binary.containsKey(tempData))) {
-                                throw new WrongTokenException("Invalid operator");
+                                throw new NoSuchOperatorFound("Invalid operator");
                             }
-                        } catch (WrongTokenException e) {
+                        } catch (NoSuchOperatorFound e) {
                             System.out.println(e.getMessage());
                         }
                     }
