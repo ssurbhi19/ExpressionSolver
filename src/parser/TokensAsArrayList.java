@@ -37,8 +37,10 @@ public class TokensAsArrayList {
         try {
 
             //Seeing if the last character of string is valid or not.
-            if (!(Character.isDigit(arr[arr.length - 1]) && arr[arr.length - 1] != ')'))
+            if (!(Character.isDigit(arr[arr.length - 1]) || arr[arr.length - 1] == ')'))
+            {
                 throw new WrongTokenException("You have entered a wrong expression.(Last character is invalid)");
+            }
             else {
                 //Parsing the string from start to end.
                 for (i = 0; i < arr.length; i++)
