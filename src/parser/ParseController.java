@@ -8,8 +8,8 @@ public class ParseController
     public void init(String str)
     {
         List<String> list;
-        ArrayListGenerator arrayListGenerator = new ArrayListGenerator(str);
-        list=arrayListGenerator.generate();
+        TokensAsArrayList tokensAsArrayList = new TokensAsArrayList(str);
+        list= tokensAsArrayList.arrayListGenerator();
         CreateController createController = new CreateController(list);
         createController.init();
     }
