@@ -31,7 +31,7 @@ class PostfixCreator
 
     private List<String> getPostFixString(List<String> list)
     {
-        boolean flag = false;
+
         //Traverse the arrayList.
         for (int i = 0; i < list.size(); i++)
         {
@@ -44,12 +44,10 @@ class PostfixCreator
             if (word.equals("("))
             {
                 stack.push(word);
-                flag = false;
             }
             //If the word is ) then pop till we encounter (
             else if (word.equals(")"))
             {
-                flag = false;
                 while (!stack.isEmpty())
                 {
                     if (stack.peek().equals("("))
@@ -66,7 +64,6 @@ class PostfixCreator
             //If its an operator then check the precedence and accordingly act.
             else if (OperatorMetaData.unary.containsKey(word) || OperatorMetaData.binary.containsKey(word))
             {
-                flag = false;
                 if (stack.isEmpty())
                 {
                     stack.push(word);
@@ -82,17 +79,7 @@ class PostfixCreator
             }
             else
             {
-                //If its a number then:
-                if (flag)
-                {
-                    String lastNumber = postFixList.get(postFixList.size() - 1);
-                    lastNumber += word;
-                    postFixList.set(postFixList.size() - 1, lastNumber);
-                }
-                else
                     postFixList.add(word + "");
-
-                flag = true;
             }
         }
         while (!stack.isEmpty())
